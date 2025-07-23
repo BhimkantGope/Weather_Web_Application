@@ -45,11 +45,24 @@ async function checkWeather(city) {
 
 searchBtn.addEventListener("click", ()=>{
     checkWeather(searchBox.value);
-});
+})
 
-searchBox.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        event.preventDefault();
+
+searchBox.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
         checkWeather(searchBox.value);
     }
 });
+
+// searchBox.addEventListener("keydown", (e) => {
+//     if (e.key === "Enter" || !e.shiftKey) {
+//         e.preventDefault();
+//         checkWeather(searchBox.value);
+//     }
+// });
+
+// searchBox.addEventListener("input", () => {
+//     searchBox.style.height = `${inputInitHeight}px`;
+//     searchBox.style.height = `${searchBox.scrollHeight}px`;
+// });
